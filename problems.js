@@ -310,6 +310,27 @@
 // 
 // ```
 
+var add = function(a, b){
+
+    if ( typeof b === 'number' ){
+        return a + b;
+    }
+    else if ( typeof b === 'undefined' ) {
+        var addOneNumber = function(num) {
+            return a + num;
+        }
+        return addOneNumber;
+    }
+}
+
+console.log(add(5,2), "problem 15");
+
+console.log(add(5)(2));
+
+
+
+
+
 
 
 // 16. Write a function which takes one argument, and returns true if that argument is a whole number (a non-negative integer, e.g. 0, 1, 5, 21, 1000, etc). If the argument is negative, is a decimal number, or is not a number at all, return false. 
