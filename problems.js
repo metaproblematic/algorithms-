@@ -272,13 +272,20 @@
 // console.log(find('I ate bacon for breakfast'), "problem 12");
 
 
+
 // 13. Write a function which accepts a sentence as a string. Capitalize the first letter of each word of the string, and return that. 
 
 // 'I ate toast for breakfast' -> 'I Ate Toast For Breakfast'
 
-// function capitalize(sentence) {
+function capitalize(sentence) {
+	sentence = sentence.split(" ");
+	for (var i = 0; i < sentence.length; i++) {
+		sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1);
+	}
+		return sentence.join(" ");
+}
 
-// }
+console.log(capitalize("I ate toast for breakfast"));
 
 
 // 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.
@@ -310,26 +317,22 @@
 // 
 // ```
 
-var add = function(a, b){
+// var add = function(a, b){
 
-    if ( typeof b === 'number' ){
-        return a + b;
-    }
-    else if ( typeof b === 'undefined' ) {
-        var addOneNumber = function(num) {
-            return a + num;
-        }
-        return addOneNumber;
-    }
-}
+//     if ( typeof b === 'number' ){
+//         return a + b;
+//     }
+//     else if ( typeof b === 'undefined' ) {
+//         var addOneNumber = function(num) {
+//             return a + num;
+//         }
+//         return addOneNumber;
+//     }
+// }
 
-console.log(add(5,2), "problem 15");
+// console.log(add(5,2), "problem 15");
 
-console.log(add(5)(2));
-
-
-
-
+// console.log(add(5)(2));
 
 
 
