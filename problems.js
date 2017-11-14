@@ -18,13 +18,13 @@
 // 2. Write a function which, given a year as a number, returns whether that number is a leap year.
 
 // function leapYear(number) {
-//     if (number % 4 === 0 || number % 400 === 0) {
+//     if (number % 4 === 0 || number % 400 === 0 && number % 100 !== 0) {
 //         return "it's a leap year";
 //     } else {
 //     	return "it's just a normal year";
 //     } 
 // }
-// console.log(leapYear(2016), "problem 2");
+// console.log(leapYear(1901), "problem 2");
 
 // 2000 -> true
 // 1901 -> false
@@ -36,14 +36,16 @@
 // [1,2,5] -> 3
 // [1,2,3,4,5] -> 6
 // [3,4,5] -> 1
-
+		   // 0, 1, 2
 // missing = [1, 2, 5];
 
 // function first(array) {
 // 	var number = array[0]
-// 	for (var i = 1; i < array.length; i++) {
-// 		if ((array[i] - number) > 1) {
-// 			return array[i] - number;
+// 	if (array.length === 0) { return 1 }
+// 	if (number !== 1) { return 1 }
+// 	for (var i = 0; i < array.length; i++) {
+// 		if (i + 1 !== array[i]) {
+// 			return i;
 // 		}
 // 		number = array[i];
 // 	} 
@@ -125,6 +127,7 @@
 // 			return true;
 // 		}
 // 		array1.sort(function(a,b) {return a - b});
+//		array2.sort(function(a,b) {return a - b});
 
 // 		for (var i = 0; i < array1.length; i++) {
 // 			if (typeof array1[i] !== typeof array2[i]) {
@@ -214,11 +217,14 @@
 // 		while (array2.length > 0) {
 // 			 array1.push(array2.shift());
 // 		}
+// 		return array1;	
 // 	}
+
 // 	if (array2.length > array1.length) {
 // 		while (array1.length > 0) {
 // 			array2.push(array1.shift());
 // 		}
+// 		return array2;
 // 	} 
 // }
 
@@ -236,7 +242,7 @@
 // 	var randomNumber = Math.random();
 // 	var randomNumberAsString = randomNumber.toString()
 // 	var randomNumberAsArray = randomNumberAsString.split('')
-// 	for (var i = 0, i < randomNumberAsArray.length, i++) {
+// 	for (var i = 0; i < randomNumberAsArray.length; i++) {
 // 		if (randomNumberAsArray[i] === '3') {
 // 			randomNumberAsArray[i] = '8';
 // 		}
@@ -277,15 +283,15 @@
 
 // 'I ate toast for breakfast' -> 'I Ate Toast For Breakfast'
 
-function capitalize(sentence) {
-	sentence = sentence.split(" ");
-	for (var i = 0; i < sentence.length; i++) {
-		sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1);
-	}
-		return sentence.join(" ");
-}
+// function capitalize(sentence) {
+// 	sentence = sentence.split(" ");
+// 	for (var i = 0; i < sentence.length; i++) {
+// 		sentence[i] = sentence[i].charAt(0).toUpperCase() + sentence[i].slice(1);
+// 	}
+// 		return sentence.join(" ");
+// }
 
-console.log(capitalize("I ate toast for breakfast"));
+// console.log(capitalize("I ate toast for breakfast"));
 
 
 // 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.
